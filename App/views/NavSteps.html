@@ -1,0 +1,14 @@
+﻿<!--<pre data-bind="text: JSON.stringify(ko.toJS($data), null, 2)"></pre>-->
+<div id="navcontainer">
+    <div id="stepcontainer">
+        <ul id="steps" data-bind="foreach: navigationSteps">
+
+
+            <li data-bind="attr: { class: liclass, id: stepId }">
+                <!--ko if:addTemplate -->
+                <div data-bind="template: 'Stepstmpl'"></div>
+                <!-- /ko -->
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,108 @@
+﻿			<div class="section group">
+				<div class="col span_7_of_10">
+					<div class="box orange">
+                    	<div class="title">
+							<h4> <i class="icon-circle-arrow-right"></i><span>Actions</span> </h4>
+						</div>
+                        <div class="content">
+                        	<div class="group">
+                            	<div class="fieldgroup">
+                                	<label for="txtOwner">Assign Owner <span class="requiredicon"><i class="icon-asterisk"></i></span></label> <input id="txtOwner" type="text" value="Doe, Jane" /><a class="btn btn-input-field people-pick" title=" People Picker "><i class="icon-user"></i></a><a class="btn btn-input-field" title=" Address Book "><i class="icon-book"></i></a>
+                                </div>
+                                <div class="fieldgroup">
+                                	<label for="txtOffice">Assign Responsible Office</label> <input id="txtOffice" type="text" value="Marketing" /><a class="btn btn-input-field" title=" Choose Term "><i class="icon-tags"></i></a>
+                                </div>
+                            </div>
+                            <input type="submit" value="Submit" data-bind="click: OnSubmit"></input>
+                            <div class="group">
+                            	<div id="detailsbox" class="ct-accordion" data-bind="AccordianHandler: {}">
+                                	<h3>Details</h3>
+                                    <div>
+                                    	<div class="group">
+                                            <div class="fieldgroup">
+                                                <label for="txtDueDate">Due Date</label> <input id="txtDueDate" type="text" />
+                                            </div>
+                                            <div class="fieldgroup">
+                                                <label for="txtRelatedCase">Related Case Number</label> <input id="txtRelatedCase" type="text" />
+                                            </div>
+                                            <div class="fieldgroup">
+                                                <label for="txtTags">Tags</label> <input id="txtTags" type="text" /><a class="btn btn-input-field" title=" Choose Term "><i class="icon-tags"></i></a>
+                                            </div>
+                                        </div>
+                                        <input type="submit" value="Submit"></input>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="group">
+                            	<div id="closeoutbox" class="ct-accordion halfwidth floatleft" data-bind="AccordianHandler: {}">
+                                	<h3>Closeout</h3>
+                                    <div>
+                                    	<div class="group">
+                                            <div class="fieldgroup">
+                                                <label for="ddlCloseoutReason">Reason for Closeout</label> 
+                                                <select id="ddlCloseoutReason" class="chzn-select">
+                                                	<option>Choose a closeout reason...</option>
+                                                </select>
+                                            </div>
+                                            <div class="fieldgroup">
+                                                <label for="txtCloseoutComment">Comments</label> 
+                                                <textarea id="txtCloseoutComment"></textarea>
+                                            </div>                                            
+                                        </div>
+                                        <input type="submit" value="Closeout"></input>
+                                    </div>
+                                </div>
+                                <div id="finaldocbox" class="ct-accordion halfwidth floatright" data-bind="AccordianHandler: {}">
+                                	<h3>Final Documents</h3>
+                                    <div>
+                                    	<div class="group">
+                                            <div class="fieldgroup">
+                                                <label for="fileUploadFinal">Upload Final Document</label> 
+                                                <input type="text" class="file_input_textbox" readonly value='No File Selected'>
+                                                <div class="file_input_div">
+                                                    <input type="button" value="Browse" class="file_input_button" data-bind="cssOnHover: 'file_input_button_hover'" />
+                                                    <input type="file" id="fileUploadFinal" class="file_input_hidden"/>
+                                                </div>
+                                            </div>                                          
+                                        </div>
+                                        <input type="submit" value="Submit Final Document"></input>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="group">
+                            	<div id="auditlogbox" class="ct-accordion halfwidth floatleft" data-bind="AccordianHandler: {}">
+                                	<h3>Audit Log</h3>
+                                    <div>
+                                    	<div class="group">
+                                            <p>Audit log goes here.</p>                                           
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="deletecasebox" class="ct-accordion halfwidth floatright" data-bind="AccordianHandler: {}">
+                                	<h3>Delete Case</h3>
+                                    <div>                                    	                                    	
+                                        <input type="submit" value="Delete Case" onclick="return confirm('Are you sure you want to delete this case?')"></input>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box blue">
+                    	<div class="title">
+							<h4> <i class="icon-list"></i><span>Correspondence Log</span> </h4>
+						</div>
+                        <div class="content">
+                        	&nbsp;
+                        </div>
+                    </div>
+				</div>
+				
+				<div class="col span_3_of_10">				
+                    <div class="box">
+                    	<div data-bind="compose: { model: 'viewmodels/documentsPartial', view: 'views/documentsPartial.html', activate: true }"></div>
+                    </div> 
+                    <div class="box green">
+                    	<div data-bind="compose: { model: 'viewmodels/participantsPartial', view: 'views/participantsPartial.html', activate: true }"></div>
+                    </div>                    
+                </div>
+			</div>

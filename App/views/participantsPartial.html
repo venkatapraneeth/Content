@@ -1,0 +1,66 @@
+﻿<div class="title">
+    <h4><i class="icon-group"></i><span>Participants</span> </h4>
+</div>
+<div class="content">
+    <div class="partslist group">
+        <div data-bind="foreach: Participants">
+            <ul class="partrow">
+                <li class="particonbox"><i data-bind="class: type == 'Group' ? 'icon-group' : 'icon-user'"></i></li>
+                <li class="partinfobox">
+                    <h3 class="partheading" data-bind="text: role"></h3>
+                    <p><a href="#" data-bind="text: name"></a></p>
+                </li>
+                <li class="partactionboxbig">
+                    <div class="btn-group"><a class="btn btn-small" title=" Not Active "><i class="icon-time"></i></a><a class="btn btn-small" title=" Remove Participant " data-bind="click: $parent.RemoveParticipant"><i class="icon-remove"></i></a></div>
+                </li>
+            </ul>
+        </div>
+
+        <!--  <ul class="partrow">
+            <li class="particonbox"><i class="icon-user"></i></li>
+            <li class="partinfobox">
+                <h3 class="partheading">Designated Owner</h3>
+                <p><a href="#">Doe, Jane</a></p>
+            </li>
+            <li class="partactionbox">
+                <div class="btn-group"><a class="btn btn-small" title=" Request Reassignment "><i class="icon-signout"></i></a></div>
+            </li>
+        </ul>
+        
+        <ul class="partrow">
+            <li class="particonbox"><i class="icon-group"></i></li>
+            <li class="partinfobox">
+                <h3 class="partheading">Responsible Office</h3>
+                <p><a href="#">Marketing</a></p>
+            </li>
+            <li class="partactionbox">&nbsp;</li>
+        </ul>
+        <ul class="partrow">
+            <li class="particonbox"><i class="icon-user"></i></li>
+            <li class="partinfobox">
+                <h3 class="partheading">Clearer</h3>
+                <p><a href="#">Smith, Gary</a></p>
+            </li>
+            <li class="partactionboxbig">
+                <div class="btn-group"><a class="btn btn-small" title=" Not Active "><i class="icon-time"></i></a><a class="btn btn-small" title=" Remove Participant "><i class="icon-remove"></i></a></div>
+            </li>
+        </ul>-->
+    </div>
+    <div class="group">
+        <div class="fieldgroup">
+            <label for="txtParticipant">Add a Participant</label>
+            <input id="txtParticipant" type="text" data-bind="jqAuto: { autoFocus: true }, jqAutoSource: Users, jqAutoValue: ParticipantName, jqAutoSourceLabel: 'name', jqAutoSourceInputValue: 'name'" />
+
+            <a class="btn btn-input-field people-pick" title=" People Picker "><i class="icon-user"></i></a><a class="btn btn-input-field" title=" Address Book "><i class="icon-book"></i></a>
+        </div>
+
+        <div class="radio-alt">
+            <input id="radioClearer" type="radio" name="radioParticipantType" value="Clearer" checked="checked" data-bind="checked: ParticipantRole">
+            <label for="radioClearer">Clearer</label>
+            <input id="radioReviewer" type="radio" name="radioParticipantType" value="Reviewer" data-bind="checked: ParticipantRole">
+            <label for="radioReviewer">Reviewer</label>
+        </div>
+
+    </div>
+    <input type="button" value="Add" data-bind="click: AddParticipant" />
+</div>

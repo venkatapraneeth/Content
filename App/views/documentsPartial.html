@@ -1,0 +1,31 @@
+﻿<div class="title">
+    <h4><i class="icon-file-alt"></i><span>Documents</span> </h4>
+</div>
+<div class="content">
+    <div class="docslist group">
+        <!--<pre data-bind="text: JSON.stringify(ko.toJS($data), null, 2)"></pre>-->
+        <div data-bind="foreach: Documents">
+            <ul data-bind="attr: { class: IsHighilighted ? 'docrow highlight' : 'docrow' }">
+                <li class="dociconbox"><i data-bind="attr: { class: IsHighilighted ? 'icon-edit-sign' : 'icon-file' }"></i></li>
+                <li class="docinfobox">
+                    <h3 class="docheading" data-bind="text: File().FileName"></h3>
+                    <p><a href="#"><i class="icon-file"></i><span data-bind="text: File().FileName"></span></a></p>
+                </li>
+                <li class="docactionbox">
+                    <div class="btn-group"><a class="btn btn-small" title=" Delete Document " data-bind="click: $parent.DeleteDocument"><i class="icon-remove"></i></a></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="group">
+        <div class="fieldgroup">
+            <label for="fileUpload">Add a Supporting Document</label>
+            <input type="text" class="file_input_textbox" readonly value='No File Selected'>
+            <div class="file_input_div">
+                <input type="button" value="Browse" class="file_input_button" data-bind="cssOnHover: 'file_input_button_hover'" />
+                <input type="file" id="fileUpload" class="file_input_hidden" data-bind="FileUpload: spFile, fileObjectURL: spFileObjectURL, fileBinaryData: spFileBinary" />
+            </div>
+        </div>
+    </div>
+    <input type="button" value="Add" data-bind="click:AddDocument" />
+</div>

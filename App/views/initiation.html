@@ -1,0 +1,52 @@
+﻿<div class="section group">
+    <div class="col span_10_of_10">
+        <div class="box blue">
+            <div class="title">
+                <h4><i class="icon-circle-arrow-right"></i><span>Start a Correspondence</span> </h4>
+            </div>
+            <div class="content">
+                <form id="initForm">
+                    <div class="initfields">
+                        <div class="group">
+                           <p></p>
+                        </div>
+                        <div class="group">
+                            <label for="txtCaseName">Case Name <span class="requiredicon"><i class="icon-asterisk"></i></span></label>
+
+                            <input id="txtCaseName" type="text" placeholder="Enter a case name..." data-bind="value: Case.caseName, TooltipHandler: { tooltipOptions: { title: 'Enter a unique case name. No special characters allowed', placement: 'right', trigger: 'focus' } }" class="widefield" />
+
+                        </div>
+                        <div class="group">
+                            <label for="txtDateDue">Date Response Due <span class="requiredicon"><i class="icon-asterisk"></i></span></label>
+                            <input id="txtDateDue" type="text" placeholder="Enter a date..." data-bind="jqueryui: { widget: 'datepicker', options: { delay: 500 } }, value: Case.responseDate" class="widefield" />
+                        </div>
+                        <div class="group">
+                            <label for="ddlCorrType">Correspondence Type <span class="requiredicon"><i class="icon-asterisk"></i></span></label>
+
+                            <select id="ddlCorrType" class="widefield chzn-select" data-bind='options: CorrespondensceList(), optionsText: function (item) {
+    return item.Name;
+}, optionsValue: function (item) {
+    return item.Value;
+}, optionsCaption: "Choose a correspondence type...", value: SelectedCorrespondenceItem '>
+                            </select>
+                        </div>
+                        <div class="group">
+                            <label for="fileUpload">File</label>
+                            <input type="text" class="file_input_textbox" readonly placeholder='No File Selected' data-bind="value: fileName">
+                            <div class="file_input_div">
+                                <input type="button" value="Browse" class="file_input_button" />
+                                <input type="file" id="fileUpload" class="file_input_hidden" data-bind="FileUpload: spFile, fileObjectURL: spFileObjectURL, fileBinaryData: spFileBinary" />
+                            </div>
+                        </div>
+                        <div class="group">
+                            <input type="submit" value="Submit" data-bind="click: OnSubmit" />
+                            <!--onclick="window.location = 'assign-owner.html'"-->
+                            <input type="button" value="Cancel" class="btn-secondary" data-bind="click: OnCancel" />
+                            <!--onclick="window.location = 'home.html'"-->
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

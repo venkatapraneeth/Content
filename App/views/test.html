@@ -1,0 +1,14 @@
+﻿<span>welcome:<span data-bind="text: Case.caseName"></span></span>
+<input type="text" data-bind="value: Case.caseName"/>
+<p>
+    <span data-bind="text: Case.caseNumber"></span>
+</p>
+
+<input type="button" value="Log Name" data-bind="click: Show"/>
+
+<span data-bind="text:errors().length"></span>
+
+
+
+
+<pre data-bind="text: JSON.stringify(ko.toJS($data), null, 2)"></pre>

@@ -1,0 +1,50 @@
+﻿<div id="wrapper">
+    <div id="headcontainer">
+        <div id="header">
+            <!--<a href="#" title="Return to the homepage"><img src="images/logo.png" alt="Correspondence Tracker Logo" /></a>-->
+            <!-- Weird display bug with IE10 on Win7 - img doesn't display!?! -->
+            <a id="link-logo" href="#" title="Correspondence Tracker"></a>
+            <h1>Correspondence Tracker - Initiation</h1>
+            <h3>Welcome <span data-bind="text: userName"></span></h3>
+            <p>
+                <h3 data-bind="text: ViewnName"></h3>
+            </p>
+        </div>
+    </div>
+
+    <div id="navcontainer">
+        <div id="stepcontainer">
+            <div data-bind="compose: { model: 'viewmodels/NavSteps', view: 'views/NavSteps.html', activate: true }"></div>
+        </div>
+    </div>
+
+    <script id="Stepstmpl" type="text/html">
+        <div>
+            <div data-bind="attr: { class: stepClass }">
+                <!-- ko if: viewText()!=="Home" -->
+                <span data-bind="text: stepValue"></span>
+                <!-- /ko -->
+            </div>
+            <!-- ko if: isDisadled -->
+            <a><span data-bind="text: viewText" /></a>
+            <!-- /ko -->
+            <!-- ko if: !isDisadled() -->
+            <a data-bind="attr: { href: ViewnName }">
+                <span data-bind="text: viewText" />
+            </a>
+            <!-- /ko -->
+        </div>
+    </script>
+
+
+    <div id="maincontentcontainer">
+        <div id="maincontent">
+            <!--ko compose: {model: router.activeItem, 
+                cacheViews:false,
+                afterCompose: router.afterCompose,
+            transition: 'entrance'} -->
+            <!--/ko-->
+        </div>
+    </div>
+
+</div>
